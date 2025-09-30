@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="container">
+        <h1>Placement Predictor</h1>
+        <p class="subtitle">Discover your placement potential</p>
+
+        <!-- Name Section -->
+        <div id="nameSection" class="form-section active">
+            <div class="input-group">
+                <label for="name">Enter Your Name</label>
+                <input type="text" id="name" placeholder="Your full name" required>
+            </div>
+            <button class="btn" onclick="proceedToForm()">Continue</button>
+        </div>
+
+        <!-- Main Form Section -->
+        <div id="formSection" class="form-section">
+            <div class="input-group">
+                <label for="iq">IQ</label>
+                <input type="number" id="iq" class="iq-input" placeholder="Enter your IQ score" min="0" max="200" required>
+            </div>
+
+            <div class="input-group">
+                <label for="cgpa">CGPA</label>
+                <input type="number" id="cgpa" class="cgpa-input" placeholder="Enter your CGPA" min="0" max="10" step="0.01" required>
+            </div>
+
+            <div class="input-group">
+                <label for="lst_sgpa">Last Sem Result</label>
+                <input type="number" id="lst_sgpa" class="result-input" placeholder="Enter last semester percentage" min="0" max="10" required>
+            </div>
+
+            <div class="input-group">
+                <label for="communication_skill">communication_skill Skills</label>
+                <input type="number" id="communication_skill" class="communication_skill-input" placeholder="Rate your communication skill (1-10)" min="1" max="10" required>
+            </div>
+
+            <button class="btn" onclick="predictPlacement()">Predict Placement</button>
+        </div>
+    </div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content" id="popupContent">
+            <h2 id="popupTitle"></h2>
+            <p id="popupMessage"></p>
+            <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
